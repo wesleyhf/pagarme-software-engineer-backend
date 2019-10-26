@@ -1,14 +1,14 @@
 # Pagar.me Software Engineer Back-end Challenge :sparkles:
 
-[Challenge description (PT-BR)](https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend)
+<a href="https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend" target="_blank">Challenge description (PT-BR)</a>
 
 # Installation
 
 :exclamation: **Dependencies** :exclamation:
-- [Docker](https://docs.docker.com/install/)
-- [Docker Composer](https://docs.docker.com/compose/install/)
-- [Node](https://nodejs.org/en/download/)
-- [Yarn](https://yarnpkg.com/en/)
+- <a href="https://docs.docker.com/install/" target="_blank">Docker</a>
+- <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Composer</a>
+- <a href="https://nodejs.org/en/download/" target="_blank">Node</a>
+- <a href="https://yarnpkg.com/en/" target="_blank">Yarn</a>
 
 ### 1. Clone
 
@@ -16,7 +16,7 @@
 $ git@github.com:wesleyhf/pagarme-software-engineer-backend.git
 ```
 
-### 1. Setup .env file
+### 2. Setup .env file
 
 ```sh
 $ cp .env.example .env
