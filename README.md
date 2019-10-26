@@ -4,7 +4,7 @@
 
 # Installation
 
-:important: **Dependencies** :important:
+:exclamation: **Dependencies** :exclamation:
 - [Docker](https://docs.docker.com/install/)
 - [Docker Composer](https://docs.docker.com/compose/install/)
 - [Node](https://nodejs.org/en/download/)
@@ -16,14 +16,33 @@
 $ git@github.com:wesleyhf/pagarme-software-engineer-backend.git
 ```
 
-### 2. Dependencies
+### 1. Setup .env file
+
+```sh
+$ cp .env.example .env
+```
+
+### 3. Dependencies
 
 ```sh
 $ yarn
 ```
 
-### 3.Starting Docker
+### 4.Starting Docker
 
 ```sh
 $ yarn docker:start
 ```
+
+# Usage
+
+### pgadmin4
+
+URL: http://localhost:9000
+
+```
+Email Address: admin@admin.com.br
+Password: pgsecret
+```
+
+> To change these values check your .env file

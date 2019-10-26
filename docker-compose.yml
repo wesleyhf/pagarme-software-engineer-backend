@@ -2,13 +2,13 @@ version: '3'
 
 services:
   node:
-    image: node:12
+    image: node:12-alpine
 
   postgres:
     image: postgres:12
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - postgres-volume:/var/lib/postgresql/data
     networks:
@@ -17,12 +17,14 @@ services:
   pgadmin4:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "admin@admin.com.br"
-      PGADMIN_DEFAULT_PASSWORD: "pgsecret"
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_PASSWORD}"
     ports:
       - "9000:80"
     depends_on:
       - postgres
+    volumes:
+      - pgadmin4-volume
     networks:
       - postgres-network
 
@@ -32,4 +34,6 @@ networks:
 
 volumes:
   postgres-volume:
+    driver: local
+  pgadmin4-volume:
     driver: local

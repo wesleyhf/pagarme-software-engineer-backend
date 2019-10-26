@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "docker": "docker-compose ps",
-    "docker:start": "docker-compose up -d",
+    "docker:start": "source .env && docker-compose up -d",
     "docker:stop": "docker-compose down",
-    "docker:build": "docker-compose build",
-    "docker:node": "docker-compose run --rm node node",
+    "docker:build": "source .env && docker-compose build"
   },
   "repository": "git@github.com:wesleyhf/pagarme-software-engineer-backend.git",
   "author": "Wesley Francisco <wesleyhf.contato@gmail.com>",
