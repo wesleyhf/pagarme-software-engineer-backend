@@ -1,0 +1,16 @@
+{
+  "name": "pagarme-software-engineer-backend",
+  "version": "0.0.1",
+  "description": "Pagar.me Software Engineer Back-end challenge.",
+  "main": "index.js",
+  "scripts": {
+    "docker": "docker-compose ps",
+    "docker:start": "docker-compose up -d",
+    "docker:stop": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:node": "docker-compose run --rm node node",
+  },
+  "repository": "git@github.com:wesleyhf/pagarme-software-engineer-backend.git",
+  "author": "Wesley Francisco <wesleyhf.contato@gmail.com>",
+  "license": "MIT"
+}

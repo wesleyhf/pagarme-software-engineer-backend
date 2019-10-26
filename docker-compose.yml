@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  node:
+    image: node:12
+
+  postgres:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    networks:
+      - postgres-network
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com.br"
+      PGADMIN_DEFAULT_PASSWORD: "pgsecret"
+    ports:
+      - "9000:80"
+    depends_on:
+      - postgres
+    networks:
+      - postgres-network
+
+networks:
+  postgres-network:
+    driver: bridge
+
+volumes:
+  postgres-volume:
+    driver: local
