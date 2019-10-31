@@ -11,5 +11,10 @@
   },
   "repository": "git@github.com:wesleyhf/pagarme-software-engineer-backend.git",
   "author": "Wesley Francisco <wesleyhf.contato@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
+  }
 }
