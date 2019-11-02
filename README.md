@@ -34,6 +34,12 @@ $ yarn
 $ yarn docker:start
 ```
 
+### 5. Run migrations
+
+```sh
+$ yarn sequelize db:migrate
+```
+
 # Usage
 
 ### pgadmin4

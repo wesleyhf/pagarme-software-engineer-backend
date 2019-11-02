@@ -1,5 +1,5 @@
 module.exports = {
-    up: (queryInterface, Sequelize) => queryInterface.createTable('Transactions', {
+    up: (queryInterface, Sequelize) => queryInterface.createTable('transactions', {
         id: {
             allowNull: false,
             autoIncrement: true,
@@ -7,13 +7,13 @@ module.exports = {
             type: Sequelize.INTEGER,
         },
 
-        // client_id: {
-        //     type: Sequelize.INTEGER,
-        //     references: {
-        //         model: 'Client',
-        //         key: 'id',
-        //     },
-        // },
+        clientId: {
+            type: Sequelize.INTEGER,
+            references: {
+                model: 'clients',
+                key: 'id',
+            },
+        },
 
         description: {
             type: Sequelize.STRING,
@@ -28,34 +28,35 @@ module.exports = {
             },
         },
 
-        payment_method: {
+        paymentMethod: {
             type: Sequelize.ENUM('debit', 'credit'),
             allowNull: false,
         },
 
         // @TODO: rename to card_number_last_digits
-        card_number: {
-            type: Sequelize.INTEGER(4),
+        // @TODO: check how to set integer (4)
+        cardNumber: {
+            type: Sequelize.INTEGER,
             allowNull: false,
         },
 
         // @TODO: rename to card_holder_name
-        card_name: {
+        cardName: {
             type: Sequelize.STRING,
             allowNull: false,
         },
 
-        card_expirity: {
+        cardExpirity: {
             type: Sequelize.STRING,
             allowNull: false,
         },
 
-        created_at: {
+        createdAt: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW,
             allowNull: false,
         },
     }),
 
-    down: (queryInterface) => queryInterface.dropTable('Transactions'),
+    down: (queryInterface) => queryInterface.dropTable('transactions'),
 };
