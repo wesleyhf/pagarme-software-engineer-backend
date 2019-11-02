@@ -1,8 +1,9 @@
+// @TODO: find a better way to manage each env using .env
 module.exports = {
     development: {
-        username: 'database_dev',
-        password: 'database_dev',
-        database: 'database_dev',
+        username: 'admin',
+        password: 'secret',
+        database: 'psp',
         host: '127.0.0.1',
         dialect: 'postgres',
     },
