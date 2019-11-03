@@ -1,7 +1,15 @@
 const paymentMethods = require('../enums/paymentMethods');
 
 module.exports = (sequelize, DataTypes) => {
-    const Transactions = sequelize.define('Transactions', {
+    const transaction = sequelize.define('transaction', {
+        // clientId: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'Clients',
+        //         key: 'id',
+        //     },
+        // },
+
         description: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -15,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             },
         },
 
-        payment_method: {
+        paymentMethod: {
             type: DataTypes.ENUM(
                 paymentMethods.DEBIT,
                 paymentMethods.CREDIT,
@@ -24,22 +32,28 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         // @TODO: rename to card_number_last_digits
-        card_number: {
-            type: DataTypes.INTEGER(4),
+        cardNumber: {
+            type: DataTypes.INTEGER,
             allowNull: false,
         },
 
         // @TODO: rename to card_holder_name
-        card_name: {
+        cardName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
 
-        card_expirity: {
+        cardExpirity: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-    }, {});
+    }, {
+        updatedAt: false,
+    });
 
-    return Transactions;
+    transaction.associate = (models) => {
+        transaction.belongsTo(models.client);
+    };
+
+    return transaction;
 };
