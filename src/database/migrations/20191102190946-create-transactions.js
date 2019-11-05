@@ -46,7 +46,7 @@ module.exports = {
             allowNull: false,
         },
 
-        cardExpirity: {
+        cardExpiry: {
             type: Sequelize.STRING,
             allowNull: false,
         },

@@ -2,13 +2,13 @@ const paymentMethods = require('../enums/paymentMethods');
 
 module.exports = (sequelize, DataTypes) => {
     const transaction = sequelize.define('transaction', {
-        // clientId: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: 'Clients',
-        //         key: 'id',
-        //     },
-        // },
+        clientId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'clients',
+                key: 'id',
+            },
+        },
 
         description: {
             type: DataTypes.STRING,
@@ -31,19 +31,19 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
 
-        // @TODO: rename to card_number_last_digits
+        // @TODO: rename to cardNumberLastDigits
         cardNumber: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
 
-        // @TODO: rename to card_holder_name
+        // @TODO: rename to cardHolderName
         cardName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
 
-        cardExpirity: {
+        cardExpiry: {
             type: DataTypes.STRING,
             allowNull: false,
         },

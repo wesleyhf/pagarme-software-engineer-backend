@@ -1,6 +1,7 @@
+// const paymentMethodsEnum = require('../enums/paymentMethods');
 const { checkSchema, validationResult } = require('express-validator');
-const paymentMethodsEnum = require('../enums/paymentMethods');
-// const cashRepository = require('../repositories/cashRepository');
+const cashService = require('../services/cashService');
+const { client: modelClient } = require('../models');
 
 const controller = {
     getValidationSchema(method) {
@@ -71,13 +72,22 @@ const controller = {
     },
 
     async in(request, response) {
+        // @TODO: middleware to parse the body on schema
+
         const errors = validationResult(request);
 
         if (!errors.isEmpty()) {
             return response.status(422).json({ errors: errors.array() });
         }
 
-        // @TODO: call cashRepository
+        // @TODO: get by auth middleware
+        const client = await modelClient.findOne({
+            where: {
+                id: 1,
+            },
+        });
+
+        cashService.cashIn(client, request.body);
 
         return response.json({
             message: 'Cash-in',

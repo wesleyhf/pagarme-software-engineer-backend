@@ -2,6 +2,22 @@ const status = require('../enums/payableStatus');
 
 module.exports = (sequelize, DataTypes) => {
     const payable = sequelize.define('payable', {
+        transactionId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'transaction',
+                key: 'id',
+            },
+        },
+
+        clientId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'clients',
+                key: 'id',
+            },
+        },
+
         status: {
             type: DataTypes.ENUM(
                 status.PAID,
@@ -27,7 +43,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false,
         },
-    }, {});
+    }, {
+        timestamps: false,
+    });
 
     payable.associate = (models) => {
         payable.belongsTo(models.client);
