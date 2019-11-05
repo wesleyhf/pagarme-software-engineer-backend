@@ -1,7 +1,7 @@
 // const paymentMethodsEnum = require('../enums/paymentMethods');
 const { checkSchema, validationResult } = require('express-validator');
 const cashService = require('../services/cashService');
-const { client: modelClient } = require('../models');
+const { client: clientModel } = require('../models');
 
 const controller = {
     getValidationSchema(method) {
@@ -81,7 +81,7 @@ const controller = {
         }
 
         // @TODO: get by auth middleware
-        const client = await modelClient.findOne({
+        const client = await clientModel.findOne({
             where: {
                 id: 1,
             },

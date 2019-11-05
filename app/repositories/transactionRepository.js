@@ -1,6 +1,18 @@
 const { transaction: transactionModel } = require('../models');
 
 const repository = {
+    async list(page = 0, size = 25) {
+        const offset = page * size;
+        const limit = offset + size;
+
+        const transactions = await transactionModel.findAll({
+            offset,
+            limit,
+        });
+
+        return transactions;
+    },
+
     async create(client, body) {
         const {
             description,
