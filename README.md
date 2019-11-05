@@ -28,10 +28,10 @@ $ cp .env.example .env
 $ yarn
 ```
 
-### 4.Starting Docker
+### 4. Starting Docker
 
 ```sh
-$ yarn docker:start
+$ docker-compose up -d
 ```
 
 ### 5. Run migrations
