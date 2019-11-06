@@ -13,7 +13,7 @@ const repository = {
         return transactions;
     },
 
-    async create(client, body) {
+    async create(client, attributes) {
         const {
             description,
             value,
@@ -21,7 +21,7 @@ const repository = {
             cardNumber,
             cardHolderName,
             cardExpiry,
-        } = body;
+        } = attributes;
 
         // get last 4 digits from cardNumber
         const cardNumberLastDigits = Number(cardNumber.substr(-4));

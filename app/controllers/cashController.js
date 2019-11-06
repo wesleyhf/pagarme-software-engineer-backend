@@ -101,7 +101,7 @@ const controller = {
             },
         });
 
-        cashService.cashIn(client, request.body);
+        await cashService.cashIn(client, request.body);
 
         return response.json({
             message: 'Cash-in',
