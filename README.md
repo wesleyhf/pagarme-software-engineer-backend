@@ -40,6 +40,12 @@ $ docker-compose up -d
 $ yarn sequelize db:migrate
 ```
 
+### 6. Run seeders
+
+```sh
+$ yarn sequelize db:seed:all
+```
+
 # Usage
 
 ### pgadmin4

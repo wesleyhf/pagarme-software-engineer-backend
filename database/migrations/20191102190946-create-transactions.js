@@ -33,15 +33,13 @@ module.exports = {
             allowNull: false,
         },
 
-        // @TODO: rename to card_number_last_digits
         // @TODO: check how to set integer (4)
-        cardNumber: {
+        cardNumberLastDigits: {
             type: Sequelize.INTEGER,
             allowNull: false,
         },
 
-        // @TODO: rename to card_holder_name
-        cardName: {
+        cardHolderName: {
             type: Sequelize.STRING,
             allowNull: false,
         },

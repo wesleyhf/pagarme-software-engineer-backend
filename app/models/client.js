@@ -10,10 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     client.associate = (models) => {
-        // client.hasMany(models.transaction, {
-        //     foreignKey: 'clientId',
-        //     as: 'client',
-        // });
         client.hasMany(models.transaction);
         client.hasMany(models.payable);
     };

@@ -31,14 +31,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
 
-        // @TODO: rename to cardNumberLastDigits
-        cardNumber: {
+        cardNumberLastDigits: {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
 
-        // @TODO: rename to cardHolderName
-        cardName: {
+        cardHolderName: {
             type: DataTypes.STRING,
             allowNull: false,
         },

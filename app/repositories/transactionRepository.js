@@ -19,7 +19,7 @@ const repository = {
             value,
             paymentMethod,
             cardNumber,
-            cardName,
+            cardHolderName,
             cardExpiry,
         } = body;
 
@@ -31,8 +31,8 @@ const repository = {
             description,
             value,
             paymentMethod,
-            cardNumber: cardNumberLastDigits,
-            cardName,
+            cardNumberLastDigits,
+            cardHolderName,
             cardExpiry,
         });
 

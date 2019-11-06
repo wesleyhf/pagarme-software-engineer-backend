@@ -17,7 +17,7 @@ const service = {
         const {
             paymentMethod,
             cardNumber,
-            cardName,
+            cardHolderName,
             cardExpiry,
             cvv,
         } = body;
@@ -25,7 +25,7 @@ const service = {
         const processed = creditCardService.process({
             paymentMethod,
             cardNumber,
-            cardName,
+            cardHolderName,
             cardExpiry,
             cvv,
         });

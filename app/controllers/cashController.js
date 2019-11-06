@@ -38,7 +38,7 @@ const controller = {
                     isCreditCard: true,
                 },
 
-                cardName: {
+                cardHolderName: {
                     in: 'body',
                     isLength: {
                         options: { min: 5 },
