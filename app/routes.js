@@ -13,8 +13,13 @@ routes.get(
     transactionController.index,
 );
 
+routes.get(
+    '/cash/balance',
+    cashController.balance,
+);
+
 routes.post(
-    '/cash-in',
+    '/cash/in',
     cashController.getValidationSchema('in'),
     cashController.in,
 );

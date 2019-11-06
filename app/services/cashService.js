@@ -1,8 +1,18 @@
 const creditCardService = require('./creditCardService');
-const transactionRepository = require('../repositories/transactionRepository');
 const payableRepository = require('../repositories/payableRepository');
+const transactionRepository = require('../repositories/transactionRepository');
 
 const service = {
+    async getBalance(client) {
+        const available = await payableRepository.getAvailableAmount(client);
+        const receivable = await payableRepository.getReceivableAmount(client);
+
+        return {
+            receivable,
+            available,
+        };
+    },
+
     async cashIn(client, body) {
         const {
             paymentMethod,

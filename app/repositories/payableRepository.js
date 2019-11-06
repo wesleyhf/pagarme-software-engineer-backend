@@ -34,7 +34,7 @@ const repository = {
     },
 
     async createWaitingFunds(transaction) {
-        const fee = 5; // tax: 3%
+        const fee = 5; // tax: 5%
         const discount = fee * (transaction.value / 100);
         const paymentDate = moment(transaction.createdAt).add(30, 'days'); // D+30
 
@@ -48,6 +48,28 @@ const repository = {
         });
 
         return payable;
+    },
+
+    async getAvailableAmount(client) {
+        const available = await payableModel.sum('value', {
+            where: {
+                clientId: client.id,
+                status: payableStatusEnum.PAID,
+            },
+        });
+
+        return available;
+    },
+
+    async getReceivableAmount(client) {
+        const available = await payableModel.sum('value', {
+            where: {
+                clientId: client.id,
+                status: payableStatusEnum.WAITING_FUNDS,
+            },
+        });
+
+        return available;
     },
 };
 
