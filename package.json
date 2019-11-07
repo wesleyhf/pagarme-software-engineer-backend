@@ -3,9 +3,18 @@
   "version": "0.0.1",
   "description": "Pagar.me Software Engineer Back-end challenge.",
   "main": "app/server.js",
+  "jest": {
+    "verbose": true,
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  },
   "scripts": {
+    "start": "node app/server.js",
     "dev": "nodemon app/server.js",
-    "lint": "eslint app config database --fix"
+    "lint": "eslint app config database tests --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": "git@github.com:wesleyhf/pagarme-software-engineer-backend.git",
   "author": "Wesley Francisco <wesleyhf.contato@gmail.com>",
@@ -14,10 +23,12 @@
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.4"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "eslint-plugin-jest": "^23.0.2",
     "express": "^4.17.1",
     "express-validator": "^6.2.0",
     "moment": "^2.24.0",
