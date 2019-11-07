@@ -3,23 +3,27 @@ const faker = require('faker');
 const { client: clientModel } = require('../../app/models');
 
 const factory = {
-    async generate(attributes = {}) {
+    getFaker(attributes = {}) {
         const data = {
             name: faker.name.findName(),
         };
 
-        const client = await clientModel.create({
+        return {
             ...data,
             ...attributes,
-        });
-
-        return client;
+        };
     },
 
-    async generateMany(times = 1, attributes = {}) {
+    async makeOne(attributes = {}) {
+        return clientModel.create(
+            this.getFaker(attributes),
+        );
+    },
+
+    async makeMany(times = 1, attributes = {}) {
         const result = Array.from(
             Array(times),
-            await this.create(attributes),
+            await this.makeOne(attributes),
         );
 
         return result;

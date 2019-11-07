@@ -7,7 +7,11 @@ const sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
-    config,
+    {
+        host: config.host,
+        dialect: config.dialect,
+        logging: config.logging,
+    },
 );
 
 const database = {
