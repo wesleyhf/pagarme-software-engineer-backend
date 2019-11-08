@@ -1,3 +1,4 @@
+const creditCardUtil = require('../utils/creditCard');
 const { transaction: transactionModel } = require('../models');
 
 const repository = {
@@ -23,8 +24,9 @@ const repository = {
             cardExpiry,
         } = attributes;
 
-        // get last 4 digits from cardNumber
-        const cardNumberLastDigits = Number(cardNumber.substr(-4));
+        const cardNumberLastDigits = creditCardUtil.getCardNumberLastDigits(
+            cardNumber,
+        );
 
         const transaction = await transactionModel.create({
             clientId: client.id,
