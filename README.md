@@ -35,11 +35,6 @@ $ ./docker build
 
 ```sh
 $ ./docker migrate
-```
-
-We also have seeders:
-
-```sh
 $ ./docker seed
 ```
 
