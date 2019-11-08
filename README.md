@@ -4,11 +4,15 @@
 
 # Table of Contents
 
-- [Documentation](wiki/documentation)
-- [Developing](#developing)
 - [My Checklist :sweat_smile:](https://github.com/wesleyhf/pagarme-software-engineer-backend/issues/1)
+- [Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/documentation)
+- [Developing](#developing)
+- [Testing](#testing)
+
 
 # Developing
+
+Just follow the steps but if found a :beetle: drop your comments on [Issues section.](https://github.com/wesleyhf/pagarme-software-engineer-backend/issues)
 
 ## Dependencies
 
@@ -53,7 +57,11 @@ $ ./docker dev
 
 Now you can access http://pagarme.localhost/ and starting your development.
 
-To help you on this journey you can use our [Postman Collection](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/), check the `postman.json`.
+To help you on this journey:
+
+- Check out our [Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/documentation)
+
+- You can use our [Postman Collection](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/), check the `postman.json`.
 
 # Testing
 
