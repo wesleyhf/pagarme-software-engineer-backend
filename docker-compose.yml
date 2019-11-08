@@ -17,26 +17,10 @@ services:
     networks:
       - postgres-network
 
-  pgadmin4:
-    image: dpage/pgadmin4
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_EMAIL}"
-      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_PASSWORD}"
-    ports:
-      - "9000:80"
-    depends_on:
-      - postgres
-    volumes:
-      - pgadmin4-volume
-    networks:
-      - postgres-network
-
 networks:
   postgres-network:
     driver: bridge
 
 volumes:
   postgres-volume:
-    driver: local
-  pgadmin4-volume:
     driver: local

@@ -13,7 +13,7 @@
 ### 1. Clone
 
 ```sh
-$ git@github.com:wesleyhf/pagarme-software-engineer-backend.git
+$ git clone git@github.com:wesleyhf/pagarme-software-engineer-backend.git
 ```
 
 ### 2. Setup .env file
@@ -45,16 +45,3 @@ $ yarn sequelize db:migrate
 ```sh
 $ yarn sequelize db:seed:all
 ```
-
-# Usage
-
-### pgadmin4
-
-URL: http://localhost:9000
-
-```
-Email Address: admin@admin.com.br
-Password: pgsecret
-```
-
-> To change these values check your .env file
