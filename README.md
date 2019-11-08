@@ -2,12 +2,18 @@
 
 <a href="https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend" target="_blank">Challenge description (PT-BR)</a>
 
-# Dependencies
+# Table of Contents
+
+- [Documentation](wiki/documentation)
+- [Developing](#developing)
+- [My Checklist :sweat_smile:](https://github.com/wesleyhf/pagarme-software-engineer-backend/issues/1)
+
+# Developing
+
+## Dependencies
 
 - <a href="https://docs.docker.com/install/" target="_blank">Docker</a>
 - <a href="https://docs.docker.com/compose/install/" target="_blank">Docker Composer</a>
-
-# Developing
 
 ## Setup
 
@@ -42,6 +48,7 @@ $ ./docker seed
 
 ```sh
 $ ./docker dev
+# use ./docker down to stop all the containers
 ```
 
 Now you can access http://pagarme.localhost/ and starting your development.
@@ -49,6 +56,8 @@ Now you can access http://pagarme.localhost/ and starting your development.
 To help you on this journey you can use our [Postman Collection](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/), check the `postman.json`.
 
 # Testing
+
+**Check if you ran the migration command `./docker migrate`**
 
 ```sh
 $ ./docker test
