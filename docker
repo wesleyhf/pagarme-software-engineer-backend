@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+COMPOSE="docker-compose"
+
+if [ $# -gt 0 ]; then
+    if [ "$1" == "start" ]; then
+        $COMPOSE up -d postgres app
+
+    elif [ "$1" == "dev" ]; then
+        $COMPOSE up -d postgres
+        $COMPOSE up dev
+
+    elif [ "$1" == "stop" ]; then
+        $COMPOSE down
+
+    elif [ "$1" == "build" ]; then
+        $COMPOSE build
+
+    elif [ "$1" == "migrate" ]; then
+        $COMPOSE run --rm node yarn sequelize db:migrate
+
+    elif [ "$1" == "seed" ]; then
+        $COMPOSE run --rm node yarn sequelize db:seed:all
+
+    elif [ "$1" == "node" ]; then
+        $COMPOSE run --rm node "$@"
+
+    elif [ "$1" == "yarn" ]; then
+        $COMPOSE run --rm node yarn
+
+    elif [ "$1" == "lint" ]; then
+        $COMPOSE run --rm node yarn lint
+
+    elif [ "$1" == "test" ]; then
+        $COMPOSE run --rm test
+    else
+        $COMPOSE "$@"
+    fi
+else
+    $COMPOSE ps
+fi

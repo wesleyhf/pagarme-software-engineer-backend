@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "35b4d95d-d032-418c-820c-a0f788b738d7",
+		"name": "Pagar.me - Software Engineer Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/transactions",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cash",
+			"item": [
+				{
+					"name": "In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Lightsaber\",\n    \"value\": 1540.90,\n    \"paymentMethod\": \"credit\",\n    \"cardNumber\": \"5115078914143083\",\n    \"cardHolderName\": \"Luke Skywalker\",\n    \"cardExpiry\": \"06/21\",\n    \"cvv\": 404\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cash/in",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cash",
+								"in"
+							]
+						},
+						"description": "Create a new transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "Balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/balance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"balance"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Up!",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

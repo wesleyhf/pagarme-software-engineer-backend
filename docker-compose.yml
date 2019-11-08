@@ -1,9 +1,6 @@
 version: '3'
 
 services:
-  node:
-    image: node:12-alpine
-
   postgres:
     image: postgres:12
     environment:
@@ -14,12 +11,51 @@ services:
       - "5432:5432"
     volumes:
       - postgres-volume:/var/lib/postgresql/data
-    networks:
-      - postgres-network
 
-networks:
-  postgres-network:
-    driver: bridge
+  node:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    links:
+      - postgres
+
+  dev:
+    build: .
+    entrypoint: yarn dev
+    ports:
+      - 80:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+  app:
+    build: .
+    entrypoint: yarn start
+    ports:
+      - 80:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+    links:
+      - postgres
+
+  test:
+    build: .
+    entrypoint: yarn test
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres
+    links:
+      - postgres
 
 volumes:
   postgres-volume:
