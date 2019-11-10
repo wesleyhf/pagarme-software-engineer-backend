@@ -12,7 +12,13 @@
 					"name": "Index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "clientId",
+								"value": "1",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/transactions",
 							"host": [
@@ -20,26 +26,33 @@
 							],
 							"path": [
 								"transactions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"description": "Page number",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "2",
+									"description": "Items per page",
+									"disabled": true
+								}
 							]
 						}
 					},
 					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Cash",
-			"item": [
+				},
 				{
-					"name": "In",
+					"name": "Create",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
+								"key": "clientId",
+								"value": "1",
 								"type": "text"
 							}
 						],
@@ -53,24 +66,35 @@
 							}
 						},
 						"url": {
-							"raw": "{{url}}/cash/in",
+							"raw": "{{url}}/transactions",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"cash",
-								"in"
+								"transactions"
 							]
 						},
 						"description": "Create a new transaction"
 					},
 					"response": []
-				},
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Balance",
+			"item": [
 				{
-					"name": "Balance",
+					"name": "Index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "clientId",
+								"value": "1",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{url}}/balance",
 							"host": [
@@ -90,7 +114,13 @@
 			"name": "Up!",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "clientId",
+						"value": "1",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "{{url}}",
 					"host": [
