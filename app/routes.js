@@ -1,5 +1,6 @@
 const express = require('express');
 const cashController = require('./controllers/cashController');
+const balanceController = require('./controllers/balanceController');
 const transactionController = require('./controllers/transactionController');
 
 const routes = express.Router();
@@ -13,15 +14,15 @@ routes.get(
     transactionController.index,
 );
 
-routes.get(
-    '/cash/balance',
-    cashController.balance,
-);
-
 routes.post(
     '/cash/in',
     cashController.getValidationSchema('in'),
     cashController.in,
+);
+
+routes.get(
+    '/balance',
+    balanceController.index,
 );
 
 module.exports = routes;

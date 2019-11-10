@@ -71,20 +71,6 @@ const controller = {
         return checkSchema(schemas[method]);
     },
 
-    async balance(request, response) {
-        const client = await clientModel.findOne({
-            where: {
-                id: 1,
-            },
-        });
-
-        const balance = await cashService.getBalance(client);
-
-        return response.json({
-            balance,
-        });
-    },
-
     async in(request, response) {
         // @TODO: middleware to parse the body on schema
 
