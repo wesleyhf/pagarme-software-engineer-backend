@@ -33,7 +33,7 @@ $ git clone git@github.com:wesleyhf/pagarme-software-engineer-backend.git
 $ cp .env.example .env
 ```
 
-3. Build Docker images
+3. Build Docker Images
 
 Check if your `./docker` file has permission to execute, if not run: `chmox +x ./docker`
 
@@ -62,6 +62,8 @@ Now your environment is ready to develpoment!
 Things you need to know:
 
 - Our API is [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) and all responses are in [JSON](http://www.json.org/) format
+
+Endpoint: http://pagarme.localhost/
 
 - All endpoints needs an authentication, check below:
 

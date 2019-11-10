@@ -1,6 +1,8 @@
 const express = require('express');
 
 const authenticateMiddleware = require('./middlewares/authenticate');
+const requestValidationMiddleware = require('./middlewares/requestValidation');
+
 const balanceController = require('./controllers/balanceController');
 const transactionController = require('./controllers/transactionController');
 
@@ -21,7 +23,7 @@ routes.get(
 
 routes.post(
     '/transactions',
-    transactionController.getValidationSchema('create'),
+    requestValidationMiddleware('transactionsCreate'),
     transactionController.create,
 );
 
