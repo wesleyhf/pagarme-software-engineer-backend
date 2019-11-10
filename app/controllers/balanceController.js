@@ -1,14 +1,8 @@
-const { payable: clientModel } = require('../models');
 const payableRepository = require('../repositories/payableRepository');
 
 const controller = {
     async index(request, response) {
-        // @TODO: get from auth middleware
-        const client = await clientModel.findOne({
-            where: {
-                id: 1,
-            },
-        });
+        const { client } = response.locals;
 
         const balance = {
             available: await payableRepository.getAvailableAmount(client),

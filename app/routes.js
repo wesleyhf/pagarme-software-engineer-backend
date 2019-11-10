@@ -1,13 +1,14 @@
 const express = require('express');
+
+const authenticateMiddleware = require('./middlewares/authenticate');
 const balanceController = require('./controllers/balanceController');
 const transactionController = require('./controllers/transactionController');
 
 const routes = express.Router();
 
-// @TODO: set auth middleware here
-routes.use((request, response, next) => {
-    next();
-});
+routes.use([
+    authenticateMiddleware,
+]);
 
 routes.get('/', (request, response) => response.json({
     message: 'Up!',

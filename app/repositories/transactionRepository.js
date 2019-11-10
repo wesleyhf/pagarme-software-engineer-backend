@@ -3,7 +3,7 @@ const { transaction: transactionModel } = require('../models');
 
 const repository = {
     async list(page = 1, limit = 5) {
-        const offset = (page-1) * limit;
+        const offset = (page - 1) * limit;
 
         const transactions = await transactionModel.findAll({
             offset,

@@ -5,7 +5,7 @@
 # Table of Contents
 
 - [My Checklist :sweat_smile:](https://github.com/wesleyhf/pagarme-software-engineer-backend/issues/1)
-- [Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/documentation)
+- [API Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/API-Documentation)
 - [Developing](#developing)
 - [Testing](#testing)
 
@@ -48,20 +48,34 @@ $ ./docker migrate
 $ ./docker seed
 ```
 
-5. Let's play!
+5. Start the containers
 
 ```sh
 $ ./docker dev
 # use ./docker down to stop all the containers
 ```
 
-Now you can access http://pagarme.localhost/ and starting your development.
+6. Disclaimer :exclamation:
+
+Now your environment is ready to develpoment!
+
+Things you need to know:
+
+- Our API is [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) and all responses are in [JSON](http://www.json.org/) format
+
+- All endpoints needs an authentication, check below:
+
+To set an authentication you need the `clientId` key on [Request Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers), e.g:
+
+```
+clientId:CLIENT_ID
+```
 
 To help you on this journey:
 
-- Check out our [Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/documentation)
+- Check out our [API Documentation](https://github.com/wesleyhf/pagarme-software-engineer-backend/wiki/API-Documentation)
 
-- You can use our [Postman Collection](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/), check the `postman.json`.
+- You can use our [Postman Collection](https://learning.getpostman.com/docs/postman/collections/intro-to-collections/), check the `postman.json`
 
 # Testing
 

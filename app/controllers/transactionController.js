@@ -1,5 +1,4 @@
 const { checkSchema, validationResult } = require('express-validator');
-const { client: clientModel } = require('../models');
 
 const transactionService = require('../services/transactionService');
 const transactionRepository = require('../repositories/transactionRepository');
@@ -92,12 +91,7 @@ const controller = {
             return response.status(422).json({ errors: errors.array() });
         }
 
-        // @TODO: get from auth middleware
-        const client = await clientModel.findOne({
-            where: {
-                id: 1,
-            },
-        });
+        const { client } = response.locals;
 
         const transaction = await transactionService.process(
             client,
