@@ -3,7 +3,7 @@ const payableRepository = require('../repositories/payableRepository');
 const transactionRepository = require('../repositories/transactionRepository');
 
 const service = {
-    async cashIn(client, body) {
+    async process(client, body) {
         const {
             paymentMethod,
             cardNumber,
@@ -25,9 +25,11 @@ const service = {
         }
 
         const transaction = await transactionRepository.create(client, body);
+
+        // @TODO: change to event (maybe sequelize hooks?)
         await payableRepository.create(transaction);
 
-        return true;
+        return transaction;
     },
 };
 

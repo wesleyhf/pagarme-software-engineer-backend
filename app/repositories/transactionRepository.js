@@ -2,9 +2,8 @@ const creditCardUtil = require('../utils/creditCard');
 const { transaction: transactionModel } = require('../models');
 
 const repository = {
-    async list(page = 0, size = 25) {
-        const offset = page * size;
-        const limit = offset + size;
+    async list(page = 1, limit = 5) {
+        const offset = (page-1) * limit;
 
         const transactions = await transactionModel.findAll({
             offset,

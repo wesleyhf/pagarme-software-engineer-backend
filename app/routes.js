@@ -1,9 +1,13 @@
 const express = require('express');
-const cashController = require('./controllers/cashController');
 const balanceController = require('./controllers/balanceController');
 const transactionController = require('./controllers/transactionController');
 
 const routes = express.Router();
+
+// @TODO: set auth middleware here
+routes.use((request, response, next) => {
+    next();
+});
 
 routes.get('/', (request, response) => response.json({
     message: 'Up!',
@@ -15,9 +19,9 @@ routes.get(
 );
 
 routes.post(
-    '/cash/in',
-    cashController.getValidationSchema('in'),
-    cashController.in,
+    '/transactions',
+    transactionController.getValidationSchema('create'),
+    transactionController.create,
 );
 
 routes.get(
