@@ -9,4 +9,5 @@ module.exports = {
     host: process.env.DB_HOSTNAME,
     logging: process.env.DB_LOG === 'true',
     dialect: 'postgres',
+    seederStorage: 'sequelize',
 };

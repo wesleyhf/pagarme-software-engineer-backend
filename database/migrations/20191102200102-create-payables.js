@@ -9,6 +9,7 @@ module.exports = {
 
         transactionId: {
             type: Sequelize.INTEGER,
+            allowNull: false,
             references: {
                 model: 'transactions',
                 key: 'id',
@@ -17,6 +18,7 @@ module.exports = {
 
         clientId: {
             type: Sequelize.INTEGER,
+            allowNull: false,
             references: {
                 model: 'clients',
                 key: 'id',
