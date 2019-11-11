@@ -55,7 +55,7 @@ $ ./docker dev
 # use ./docker down to stop all the containers
 ```
 
-6. Disclaimer :exclamation:
+6. Important :exclamation:
 
 Now your environment is ready to develpoment!
 
