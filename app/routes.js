@@ -8,14 +8,17 @@ const transactionController = require('./controllers/transactionController');
 
 const routes = express.Router();
 
-routes.use([
-    authenticateMiddleware,
-]);
-
+// @TODO: authenticateMiddleware
 routes.get('/', (request, response) => response.json({
     message: 'Up!',
 }));
 
+routes.use([
+    authenticateMiddleware,
+]);
+
+
+// @TODO: folder instead of group by
 routes.get(
     '/transactions',
     transactionController.index,

@@ -37,7 +37,7 @@ module.exports = {
         },
 
         value: {
-            type: Sequelize.FLOAT,
+            type: Sequelize.INTEGER,
             allowNull: false,
             validate: {
                 min: 1,

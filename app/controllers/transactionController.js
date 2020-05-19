@@ -2,6 +2,7 @@ const transactionService = require('../services/transactionService');
 const transactionRepository = require('../repositories/transactionRepository');
 
 const controller = {
+    // @TODO: set request validation middleware
     async index(request, response) {
         const page = request.query.page || 1;
         const limit = request.query.limit || 5;

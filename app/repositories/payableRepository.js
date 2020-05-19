@@ -43,13 +43,15 @@ const repository = {
             clientId: transaction.clientId,
             status: payableStatusEnum.WAITING_FUNDS,
             fee,
-            value: (transaction.value - discount),
+            value: transaction.value,
+            discount,
             paymentDate,
         });
 
         return payable;
     },
 
+    // @TODO: group by on SUM
     async getAvailableAmount(client) {
         const available = await payableModel.sum('value', {
             where: {
@@ -74,3 +76,7 @@ const repository = {
 };
 
 module.exports = repository;
+
+// module.exports = {
+//     ...
+// };

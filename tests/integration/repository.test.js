@@ -11,6 +11,7 @@ describe('Repositories', () => {
     describe('transactionRepository', () => {
         afterAll(() => sequelize.close());
 
+        // @TODO: improve
         test('should return an array of transaction', async () => {
             const transactions = await transactionRepository.list();
 

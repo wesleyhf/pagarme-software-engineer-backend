@@ -1,6 +1,7 @@
 const { checkSchema, validationResult } = require('express-validator');
 
 const schemas = {
+    // @TODO: improve responses
     transactionsCreate: {
         description: {
             in: 'body',
@@ -11,7 +12,7 @@ const schemas = {
 
         value: {
             in: 'body',
-            isFloat: {
+            isInt: {
                 options: { min: 1 },
             },
         },

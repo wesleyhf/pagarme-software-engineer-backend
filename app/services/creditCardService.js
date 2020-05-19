@@ -1,5 +1,6 @@
 const service = {
     process(creditCard) {
+        // @TODO: logic
         return !!creditCard;
     },
 };

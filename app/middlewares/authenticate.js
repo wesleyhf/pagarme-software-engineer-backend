@@ -12,6 +12,8 @@ module.exports = async (request, response, next) => {
             });
     }
 
+    // @TODO: try catch
+    // @TODO: improve status -- .status(500)
     const client = await clientModel.findOne({
         where: {
             id: clientId,

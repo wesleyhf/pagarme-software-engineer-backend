@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
         value: {
-            type: DataTypes.FLOAT,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 min: 1,
