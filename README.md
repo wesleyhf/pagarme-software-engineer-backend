@@ -1,3 +1,13 @@
+# Update (2019-11-27)
+
+**pt-BR**
+
+Eu agradeço por todo o aprendizado/atenção que recebi pela [Pagar.me](https://github.com/pagarme), porém o "timing" não estava sincronizados para ambos os lados. Obrigado novamente!
+
+**en**
+
+I'm thankful for all the knowledge/attention that I received from [Pagar.me](https://github.com/pagarme) but the "timing" was not synced for both sides. Thank you again!
+
 # pagar.me - Software Engineer Back-end Challenge :sparkles:
 
 <a href="https://github.com/pagarme/vagas/tree/master/desafios/software-engineer-backend" target="_blank">Challenge description (PT-BR)</a>
